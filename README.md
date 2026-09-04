@@ -8,19 +8,19 @@ Utilizzo Tipo :UNREAL 5.1
 # INPUT: 
 
 
- - Keyboard :
+ - Azione (Keyboard) :
 
    
-- WASD (movimento),
+- movimento (WASD),
 
 
  - Run (Left Shift),
 
 
- - Jump(Space Bar),
+ - Jump (Space Bar),
 
 
-- Crouch(Left Ctrl),
+- Crouch (Left Ctrl),
 
 
 - Gun (Right Mouse Button),
@@ -29,28 +29,28 @@ Utilizzo Tipo :UNREAL 5.1
 - Interact(E),
 
 
-- Inventory(I),
+- Inventory (I),
 
 
-- AimVisble(Right Mouse Button),
+- AimVisble (Right Mouse Button),
 
 
 - Fire(Left Mouse Button),
 
 
-- Roll(Q),
+- Roll (Q),
 
 
-- LaunchGranade(G),
+- LaunchGranade (G),
 
 
-- PauseMenu(P),
+- PauseMenu (P),
 
 
-- Rotation & MoveCam(Mouse),
+- Rotation & MoveCam (Mouse),
 
 
-- Scroll(Mouse Wheel)
+- Scroll (Mouse Wheel)
 
 
 NB.E' stato inserito come test il tasto  U per verificare l'utilizzo dell'oggetto. Tale,  non è da utilizzarsi, poichè prende sempre il primo oggetto utile nella scorrimento degli oggetti presenti (non implementato).
