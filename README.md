@@ -29,7 +29,7 @@ Utilizzo Tipo :UNREAL 5.1
 - Interact(E),
 
 
-- Incentory(I),
+- Inventory(I),
 
 
 - AimVisble(Right Mouse Button),
