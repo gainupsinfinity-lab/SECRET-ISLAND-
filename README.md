@@ -56,5 +56,5 @@ Rotaion & MoveCam(Mouse),
 Scroll(Mouse Wheel)
 
 
-NB.E' stato inserito come test U per usare l'obj. Tale  non è da utilizzarsi poichè prende il primo oggetto utile nella scorrimento degli oggetti presenti (non implementato).
+NB.E' stato inserito come test il tasto  U per verificare l'utilizzo dell'oggetto. Tale,  non è da utilizzarsi, poichè prende sempre il primo oggetto utile nella scorrimento degli oggetti presenti (non implementato).
 Utilizzare il Mouse per la selezione degli oggetti nell'Inventory.
