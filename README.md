@@ -1,13 +1,11 @@
 # SECRET-ISLAND-
-# Progetto
+# Corso Di Programmazione Avanzata- Videogame e di Sistemi di Realtà Virtuale-
 
-Corso Di Programmazione Avanzata- Videogame e di Sistemi di Realtà Virtula-
+# Progetto:
 
+Utilizzo Tipo :UNREAL 5.1
 
-Utilizzo Tipo :UNREAL 5.1,
-
-
-/** INPUT **/
+# INPUT: 
 
 
 Tasti con Keyboard,
