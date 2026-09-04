@@ -8,7 +8,7 @@ Utilizzo Tipo :UNREAL 5.1
 # INPUT: 
 
 
-Tasti con Keyboard,
+ - Keyboard -
 
 
 Input di riferimento :
