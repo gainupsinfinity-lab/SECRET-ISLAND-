@@ -47,7 +47,7 @@ Utilizzo Tipo :UNREAL 5.1
 - PauseMenu(P),
 
 
-- Rotaion & MoveCam(Mouse),
+- Rotation & MoveCam(Mouse),
 
 
 - Scroll(Mouse Wheel)
