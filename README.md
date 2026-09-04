@@ -10,50 +10,47 @@ Utilizzo Tipo :UNREAL 5.1
 
  - Keyboard :
 
-
-Input di riferimento :
-
-
-WASD (movimento),
+   
+- WASD (movimento),
 
 
-Run (Left Shift),
+ - Run (Left Shift),
 
 
-Jump(Space Bar),
+ - Jump(Space Bar),
 
 
-Crouch(Left Ctrl),
+- Crouch(Left Ctrl),
 
 
-Gun (Right Mouse Button),
+- Gun (Right Mouse Button),
 
 
-Interact(E),
+- Interact(E),
 
 
-Incentory(I),
+- Incentory(I),
 
 
-AimVisble(Right Mouse Button),
+- AimVisble(Right Mouse Button),
 
 
-Fire(Left Mouse Button),
+- Fire(Left Mouse Button),
 
 
-Roll(Q),
+- Roll(Q),
 
 
-LaunchGranade(G),
+- LaunchGranade(G),
 
 
-PauseMenu(P),
+- PauseMenu(P),
 
 
-Rotaion & MoveCam(Mouse),
+- Rotaion & MoveCam(Mouse),
 
 
-Scroll(Mouse Wheel)
+- Scroll(Mouse Wheel)
 
 
 NB.E' stato inserito come test il tasto  U per verificare l'utilizzo dell'oggetto. Tale,  non è da utilizzarsi, poichè prende sempre il primo oggetto utile nella scorrimento degli oggetti presenti (non implementato).
