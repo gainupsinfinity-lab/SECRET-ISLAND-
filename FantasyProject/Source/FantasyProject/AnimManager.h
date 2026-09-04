@@ -16,7 +16,7 @@
  *
  */
 UCLASS()
-class FANTASYPROJECT_API UAnimManager : public UAnimNotify
+class FANTASYPROJECT_API UAnimManager : public UAnimNotify  // Classe UAnimNotify per monatge o sequnece
 {
 	GENERATED_BODY()
 public:

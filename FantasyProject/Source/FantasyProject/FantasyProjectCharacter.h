@@ -13,11 +13,11 @@ class AFantasyProjectCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
+	/** Camer dietro player  */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
-	/** Follow camera */
+	/** segue camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 	
@@ -43,10 +43,10 @@ public:
 
 protected:
 
-	/** Called for movement input */
+	/**  per movement input */
 	void Move(const FInputActionValue& Value);
 
-	/** Called for looking input */
+	/** per  input */
 	void Look(const FInputActionValue& Value);
 			
 
@@ -54,7 +54,7 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
-	// To add mapping context
+	
 	virtual void BeginPlay();
 
 public:

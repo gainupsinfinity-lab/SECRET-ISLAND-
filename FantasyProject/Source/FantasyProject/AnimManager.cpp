@@ -20,7 +20,7 @@ namespace
 		Water
 	};
 
-	EFootstepSurfaceBranch ResolveSurfaceBranch(UPhysicalMaterial* HitPhysMat)
+	EFootstepSurfaceBranch ResolveSurfaceBranch(UPhysicalMaterial* HitPhysMat)  //riceve il physical material trovato sotto il player
 	{
 		const EPhysicalSurface SurfaceType = UPhysicalMaterial::DetermineSurfaceType(HitPhysMat);
 
@@ -41,7 +41,7 @@ namespace
 		if (HitPhysMat) // mezzo physical material
 		{
 			const FString PhysMatName = HitPhysMat->GetName();
-			if (PhysMatName.Contains(TEXT("Sand"), ESearchCase::IgnoreCase))
+			if (PhysMatName.Contains(TEXT("Sand"), ESearchCase::IgnoreCase))   // enum di ricerca che confront la stringa ignorando misuc e min
 			{
 				return EFootstepSurfaceBranch::Sand;
 			}
@@ -58,7 +58,7 @@ namespace
 
 		return EFootstepSurfaceBranch::Default;
 	}
-	bool IsActorInsideWater(AActor* Actor)  // riconoscimento W
+	bool IsActorInsideWater(AActor* Actor)  // // riconoscimento actor e world
 	{
 		if (!Actor)
 		{
@@ -72,7 +72,7 @@ namespace
 			return false;
 		}
 
-		FVector ActorLocation = Actor->GetActorLocation();
+		FVector ActorLocation = Actor->GetActorLocation();  //prende posizione
 
 		float FeetZ = ActorLocation.Z;
 
@@ -80,10 +80,10 @@ namespace
 
 		if (Character && Character->GetCapsuleComponent())
 		{
-			FeetZ =ActorLocation.Z -Character->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+			FeetZ =ActorLocation.Z -Character->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();  // calcolo altezza piedi con Get al centro della capsula
 		}
 
-		for (TActorIterator<AWaterBody> It(World); It; ++It)
+		for (TActorIterator<AWaterBody> It(World); It; ++It)  // scorri tutti gli Actorbody
 		{
 			AWaterBody* WaterBody = *It;
 
@@ -92,7 +92,7 @@ namespace
 				continue;
 			}
 
-			UWaterBodyComponent* WaterComponent =WaterBody->GetWaterBodyComponent();
+			UWaterBodyComponent* WaterComponent =WaterBody->GetWaterBodyComponent();  // da Water predno il componente  chiedo pos,nomrlae velocity e profondità
 
 			if (!WaterComponent)
 			{
@@ -112,7 +112,7 @@ namespace
 				);
 			}*/
 
-			if (FeetZ <= WaterSurfaceLocation.Z)
+			if (FeetZ <= WaterSurfaceLocation.Z)  // confronto se player ha piedi nell'h20
 			{
 				return true;
 			}
@@ -244,16 +244,16 @@ void UAnimManager::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* A
 
 	if (!MeshComp) return;
 	
-	AActor* Actor = MeshComp->GetOwner(); //  prendo il personaggio e torovo la laposizione
+	AActor* Actor = MeshComp->GetOwner(); //  prendo il personaggio e torovo la laposizione da skeletal risali all'actor proprietario
 	if (!Actor) return;
 	if (!MeshComp->GetWorld()) return;
-	const bool bInWater = IsActorInsideWater(Actor);
+	const bool bInWater = IsActorInsideWater(Actor); // verifica se piedi nell'acqua 
 
 	// Facciamo partire un raggio invisibile dai piedi del giocatore verso il basso
 	FVector Start = Actor->GetActorLocation();
-	FVector End = Start - FVector(0.0f, 0.0f, 150.0f);
+	FVector End = Start - FVector(0.0f, 0.0f, 150.0f);  // raggio verticale lungo 1,5 m
 
-	FCollisionQueryParams QueryParams;
+	FCollisionQueryParams QueryParams;  // no copy player
 	QueryParams.AddIgnoredActor(Actor);
 	QueryParams.bReturnPhysicalMaterial = true; // Questo dice ad Unreal di leggere il Physical Material!
 
@@ -261,11 +261,11 @@ void UAnimManager::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* A
 	UPhysicalMaterial* HitPhysMat = nullptr;
 
 	// Eseguiamo il tracciamento
-	if (MeshComp->GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, QueryParams))
+	if (MeshComp->GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility, QueryParams))  // reupero del phyisic 
 	{
 		if (HitResult.PhysMaterial.IsValid())
 		{
-			HitPhysMat = HitResult.PhysMaterial.Get();
+			HitPhysMat = HitResult.PhysMaterial.Get();   // se esiste salvo
 			/*if (GEngine)
 			{
 				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("Superficie Esposta: %s"), *HitPhysMat->GetName()));
@@ -281,7 +281,7 @@ void UAnimManager::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* A
 		EFootstepSurfaceBranch SurfaceBranch;
 		if (bInWater)
 		{
-			SurfaceBranch = EFootstepSurfaceBranch::Water;
+			SurfaceBranch = EFootstepSurfaceBranch::Water;   // verifica se player è dentro o no a h20
 		}
 		else
 		{
